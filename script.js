@@ -2,14 +2,15 @@ import {obtenerData, Persona} from "./utils.js";
 
 const render = async() => {
     const data = await obtenerData();
+    console.log(data);
 
     const personas= data.personas;
-    const contenedor = document.querySelector("#contenedor");
+    const contenedor = document.getElementById("contenedor");
 
-    for(persona of personas){
-        const personaOb = new Persona(persona.nombre,persona.edad);
-        const elementoP= personaOb.render();
-        contenedor.appendChild(elementoP);
+    for(const persona of personas){
+        const personaOb = new Persona(persona.nombre, persona.edad);
+        const p= personaOb.render();
+        contenedor.appendChild(p);
     }
 }
 window.onload = render;
