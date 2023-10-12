@@ -18,3 +18,19 @@ export class Persona{
         return p;
       }
 }
+export class Animal {
+	nombre = "";
+    tipo = "";
+
+	constructor(nombre,tipo) {
+		this.nombre = nombre;
+        this.tipo= tipo;
+	}
+
+    render() {
+        const text2= " hola, soy "+this.nombre+" soy un "+this.tipo
+        const p2 = document.createElement("p");
+        p2.textContent = text2;
+        return p2;
+      }
+}

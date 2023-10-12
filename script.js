@@ -1,4 +1,4 @@
-import {obtenerData, Persona} from "./utils.js";
+import {obtenerData, Persona, Animal} from "./utils.js";
 
 const render = async() => {
     const data = await obtenerData();
@@ -12,5 +12,13 @@ const render = async() => {
         const p= personaOb.render();
         contenedor.appendChild(p);
     }
+    const animales = data.animales;
+    const contenedor2 = document.getElementById("contenedor");
+
+	for(const animal of animales) {
+		const animalRender = new Animal(animal.nombre, animal.tipo);
+		const animalParrafo = animalRender.render();
+		contenedor.appendChild(animalParrafo);
+	}
 }
 window.onload = render;
