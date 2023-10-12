@@ -1,0 +1,22 @@
+{
+	"personas": [
+		{
+			"nombre": "Juan",
+			"edad": 18
+		},
+		{
+			"nombre": "Ana",
+			"edad": 5
+		}
+	],
+	"animales": [
+		{
+			"tipo": "Felino",
+			"nombre": "Gato"
+		},
+		{
+			"tipo": "Canino",
+			"nombre": "Perro"
+		}
+	]
+}
