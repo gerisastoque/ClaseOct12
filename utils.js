@@ -1,5 +1,7 @@
-export const saludar = () => {
-    alert("HELLO HELLO SNAPCHAT");
+export const obtenerData = async() => {
+    const response = await fetch("https://raw.githubusercontent.com/gerisastoque/ClaseOct12/main/data.json")
+    const data = response.json();
+    return data
 }
 export class Persona{
     nombre="";
@@ -11,8 +13,8 @@ export class Persona{
     }
     render() {
         const text= " hola, mi nombre es "+this.nombre+" y tengo "+this.edad+" años."
-        const elementoP = document.createElement('p');
-        elementoP.textContent = text;
-        return elementoP;
+        const p = document.createElement("p");
+        p.textContent = text;
+        return p;
       }
 }
