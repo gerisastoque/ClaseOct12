@@ -3,34 +3,33 @@ export const obtenerData = async() => {
     const data = response.json();
     return data
 }
-export class Persona{
-    nombre="";
-    edad="";
-
-    constructor(nombre,edad){
-        this.nombre=nombre;
-        this.edad=edad;
-    }
-    render() {
-        const text= " hola, mi nombre es "+this.nombre+" y tengo "+this.edad+" años."
-        const p = document.createElement("p");
-        p.textContent = text;
-        return p;
-      }
-}
 export class Animal {
 	nombre = "";
     tipo = "";
+    #element= null
 
 	constructor(nombre,tipo) {
-		this.nombre = nombre;
-        this.tipo= tipo;
+		this.nombre = nombre
+        this.tipo= tipo
 	}
 
+    #obtenerTexto(){
+        const texto= "Hola, mi nombre es " + this.nombre + " y mi raza es "+ this.tipo
+        return texto;
+    }
     render() {
-        const text2= " hola, soy "+this.nombre+" soy un "+this.tipo
-        const p2 = document.createElement("p");
-        p2.textContent = text2;
-        return p2;
+        const texto= this.#obtenerTexto();
+        const p1= document.createElement('p');
+        p1.textContent= texto;
+        this.#element= p1
+        return p1
       }
+      onClickListener() {
+        if (this.#element) {
+          this.#element.addEventListener("click", () => {
+            const texto = this.#obtenerTexto();
+            alert(texto);
+          });
+      }
+}
 }
